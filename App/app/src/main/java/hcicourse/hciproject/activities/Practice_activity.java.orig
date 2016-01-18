@@ -1,0 +1,167 @@
+package hcicourse.hciproject.activities;
+
+import android.content.Intent;
+import android.os.CountDownTimer;
+import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+
+import hcicourse.hciproject.R;
+<<<<<<< HEAD
+import hcicourse.hciproject.data_structures.Experiment;
+import hcicourse.hciproject.data_structures.Password;
+import hcicourse.hciproject.database.DatabaseContract;
+import hcicourse.hciproject.database.PwdTableHelper;
+=======
+import hcicourse.hciproject.data_structures.Test;
+import hcicourse.hciproject.interfaces.PasswordResultListener;
+import hcicourse.hciproject.widgets.DialLock;
+>>>>>>> 0b6cf596e95b13f46a084073773f9d6388cb94c9
+
+public class Practice_activity extends ActionBarActivity {
+public class Practice_activity extends ActionBarActivity implements PasswordResultListener{
+
+<<<<<<< HEAD
+    private Experiment experiment;
+=======
+    private Test test;
+    private DialLock diallock;
+>>>>>>> 0b6cf596e95b13f46a084073773f9d6388cb94c9
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_practice_activity);
+<<<<<<< HEAD
+
+        //get experiment from intent
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
+        experiment = b.getParcelable("experiment");
+        experiment.current_pwd = b.getParcelable("pwd");
+
+        //TODO HACK!!!
+        ArrayList<Integer> temp = new ArrayList<Integer> ();
+        temp.add(1);
+        temp.add(2);
+        temp.add(3);
+        temp.add(5);
+        experiment.current_pwd = new Password(-1,temp);
+
+        //TODO: begin test button
+        //TODO: update pwd code!!!
+        //set the view
+        update_pw_header();
+
+        //Countdown
+        final TextView timertext = (TextView) findViewById(R.id.activity_practice_activity_header_time);
+        CountDownTimer timer = new CountDownTimer(301000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                double minutes = Math.floor(millisUntilFinished/60000);
+                double seconds = millisUntilFinished - minutes*60000;
+
+                //TODO: format the seconds properly!!!
+                timertext.setText(String.valueOf((int)minutes) + ":" + String.valueOf((int)(seconds / 1000)));
+            }
+
+            public void onFinish() {
+                //TODO: do something!!!
+                start_first_test_activity();
+            }
+        }.start();
+    }
+
+    private void update_pw_header() {
+
+        //make the right pwd visible
+        if(experiment.is_current_interface_pattern()) {
+            set_numeric_pwd_header_visibility(View.INVISIBLE);
+            set_pattern_pwd_header_visibility(View.VISIBLE);
+        } else {
+            set_numeric_pwd_header_visibility(View.VISIBLE);
+            set_pattern_pwd_header_visibility(View.INVISIBLE);
+        }
+
+        //now fill the right pwd
+        if(experiment.is_current_interface_pattern()) {
+            //TODO: update pattern password
+        } else {
+            update_numeric_pwd_header();
+        }
+    }
+
+    private void set_numeric_pwd_header_visibility(int visiblity){
+        TextView num_pwd_text = (TextView) findViewById(R.id.activity_practice_activity_header_number_pin);
+        num_pwd_text.setVisibility(visiblity);
+    }
+
+    private void set_pattern_pwd_header_visibility(int visibility) {
+        //TODO: update this with the right view
+        ImageView pattern_pwd_img = (ImageView) findViewById(R.id.activity_practice_activity_header_number_pattern);
+        pattern_pwd_img.setVisibility(visibility);
+    }
+
+    private void update_numeric_pwd_header() {
+        String pwd_string = PwdTableHelper.convert_pw_to_string(experiment.getCurrent_pwd().getPwd_content());
+        TextView num_pwd_text = (TextView) findViewById(R.id.activity_practice_activity_header_number_pin);
+        num_pwd_text.setText(pwd_string);
+    }
+
+    //start next activity - test
+    private void start_first_test_activity() {
+        //start experiment
+        experiment.start_next_trial(Practice_activity.this);
+
+        //launch test
+        Intent intent = new Intent(Practice_activity.this, Test_activity.class);
+        Bundle b = new Bundle();
+        b.putParcelable("experiment",experiment);
+        intent.putExtras(b);
+        startActivity(intent);
+    }
+=======
+        diallock = (DialLock) findViewById(R.id.dial_lock);
+>>>>>>> 0b6cf596e95b13f46a084073773f9d6388cb94c9
+
+        // Set up the lock view
+        diallock.ViewInit();
+        diallock.InstallPassword("1234");
+        diallock.AddPasswordResultListener(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_practice_activity, menu);
+        return true;
+    }
+
+    //TODO: add on click -> Test
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void NotifyPasswordResult(boolean result) {
+        boolean test = result;
+    }
+}

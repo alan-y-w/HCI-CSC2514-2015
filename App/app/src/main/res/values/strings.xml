@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HCIProject</string>
+    <string name="title_activity_pin_activity">PIN_activity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_pattern_activity">Pattern_activity</string>
+    <string name="title_activity_spin_">Spin_Activity</string>
+    <string name="title_activity_database_manager">DatabaseManager</string>
+    <string name="title_activity_experiment_home_activity">Experiment Home</string>
+    <string name="title_activity_xml_writer">xml_writer</string>
+    <string name="title_activity_experiment_start"></string>
+    <string name="title_activity_tutorial">TutorialActivity</string>
+    <string name="title_activity_practice_activity">Practice_activity</string>
+    <string name="title_activity_test_activity">Test_activity</string>
+    <string name="title_activity_break_activity">Break </string>
+    <string name="title_activity_experiment_complete_activity">ExperimentComplete_activity</string>
+    <string name="title_activity_survey_activity">Survey</string>
+    <string name="title_activity_tutorial_video_activity">TutorialVideo_activity</string>
+
+</resources>

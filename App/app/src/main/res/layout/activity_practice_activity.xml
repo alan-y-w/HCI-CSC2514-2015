@@ -1,0 +1,166 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:padding="0dp"
+    android:layout_margin="0dp"
+    tools:context="hcicourse.hciproject.activities.Practice_activity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_margin="0dp"
+        android:layout_height="110dp"
+        android:id="@+id/activity_practice_activity_header_layout"
+        android:background="@color/background_floating_material_light">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="20pt"
+            android:text="1234"
+            android:id="@+id/activity_practice_activity_header_number_pin"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:visibility="visible"/>
+
+        <hcicourse.hciproject.widgets.PatternDisplay
+            android:id="@+id/activity_practice_activity_header_password_display"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:visibility="invisible"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/activity_test_activity_header_unlock_no"
+            android:layout_toRightOf="@id/activity_practice_activity_header_number_pin"
+            android:layout_alignBottom="@+id/activity_practice_activity_header_number_pin"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="10pt"
+            android:textColor="#888"
+            android:text="x3"/>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/activity_practice_header_items"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/activity_practice_activity_header_stopwatch"
+                android:layout_centerHorizontal="true"
+                android:textSize="10pt"
+                android:text="00:00"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/activity_test_header_items"
+            android:visibility="gone">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:progress="0"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:id="@+id/progressBar"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp" />
+
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:paddingTop="0dp"
+        android:id="@+id/activity_practice_activity_pw_layout"
+        android:layout_below="@+id/activity_practice_activity_header_layout"
+        >
+
+        <hcicourse.hciproject.widgets.DialLock
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/dial_lock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:diallock_layoutColor="#333"
+            app:diallock_layoutAlpha="100"
+            app:circleLabel="unlock"
+            app:promptText=""
+            app:textDimension="28sp"
+            android:layout_marginBottom="24dp"
+            android:visibility="gone"/>
+
+        <hcicourse.hciproject.widgets.PINLock
+            android:id="@+id/PIN_lock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:PINlock_textDimension="28sp"
+            app:PINlock_layoutColor="#333"
+            app:PINlock_layoutAlpha="100"
+            android:visibility="visible"
+            android:padding="0dp"
+            android:layout_marginBottom="12dp"
+            />
+
+        <hcicourse.hciproject.widgets.PatternLock
+            android:id="@+id/pattern_lock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/activity_practice_activity_footer_pracitce_layout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time left:  "
+            android:textSize="8pt"
+            android:textColor="#cccccc"
+            android:id="@+id/activity_practice_activity_header_time_label"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5:00"
+            android:textColor="#cccccc"
+            android:textSize="8pt"
+            android:id="@+id/activity_practice_activity_header_time"
+            android:layout_toRightOf="@id/activity_practice_activity_header_time_label"
+            android:layout_alignParentBottom="true"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Begin Test"
+            android:id="@+id/activity_practice_activity_header_next_activity_button"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+</RelativeLayout>

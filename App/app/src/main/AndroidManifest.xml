@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="hcicourse.hciproject" >
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".activities.DatabaseManager_activity"
+            android:label="@string/title_activity_database_manager"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activities.ExperimentHome_activity"
+            android:label="@string/title_activity_experiment_home_activity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ExperimentStart_activity"
+            android:label="@string/title_activity_experiment_start"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activities.Tutorial_activity"
+            android:label="@string/title_activity_tutorial"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activities.Practice_activity"
+            android:label="@string/title_activity_practice_activity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activities.Test_activity"
+            android:label="@string/title_activity_test_activity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activities.Break_activity"
+            android:label="@string/title_activity_break_activity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="hcicourse.hciproject.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".activities.ExperimentComplete_activity"
+            android:label="@string/title_activity_experiment_complete_activity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activities.Survey_activity"
+            android:label="@string/title_activity_survey_activity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activities.TutorialVideo_activity"
+            android:label="@string/title_activity_tutorial_video_activity"
+            android:screenOrientation="landscape">
+        </activity>
+    </application>
+
+</manifest>

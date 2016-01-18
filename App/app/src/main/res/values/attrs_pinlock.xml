@@ -1,0 +1,7 @@
+<resources>
+    <declare-styleable name="PINLock">
+        <attr name="PINlock_textDimension" format="dimension" />
+        <attr name="PINlock_layoutAlpha" format="integer"></attr>
+        <attr name="PINlock_layoutColor" format="color" />
+    </declare-styleable>
+</resources>

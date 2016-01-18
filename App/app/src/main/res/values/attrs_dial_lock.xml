@@ -1,0 +1,9 @@
+<resources>
+    <declare-styleable name="DialLock">
+        <attr name="circleLabel" format="string"></attr>
+        <attr name="promptText" format="string"></attr>
+        <attr name="diallock_layoutColor" format="color"></attr>
+        <attr name="diallock_layoutAlpha" format="integer"></attr>
+        <attr name="textDimension" format="dimension" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,19 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <hcicourse.hciproject.widgets.CustomPatternLock android:background="#ccc"
+        android:layout_width="300dp" android:layout_height="300dp" android:paddingLeft="20dp"
+        android:paddingBottom="40dp" />
+
+    <!--<hcicourse.hciproject.widgets.DialLock-->
+        <!--android:id="@+id/dial_lock"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="5dp"-->
+        <!--app:circleColor="#3399FF"-->
+        <!--app:labelColor="#FFFFFF"-->
+        <!--app:numpadColor="#C2C2C2"-->
+        <!--app:circleLabel="unlock"-->
+        <!--app:Dimension="36sp" />-->
+</FrameLayout>
